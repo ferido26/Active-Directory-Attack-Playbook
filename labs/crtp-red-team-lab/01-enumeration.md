@@ -37,3 +37,15 @@ Using PowerView, key domain information was extracted.
 - Get-DomainComputers | dnshostname
 - Get-DomainGroup -Identity DomainAdmins
 - get-DomainGroupMember -Identity DomainAdmins
+```
+
+## What I Learned!
+- Without enumeration you cannot plot a successfull attack path.
+- Even low-privileged users can gather significant domain information.
+- Tools like BloodHound simplify complex AD relationships.
+  
+---
+
+## Summary
+
+- The enumeration phase provided a clear understanding of the domain structure and revealed multiple potential attack paths, which were leveraged in later stages of the attack.
