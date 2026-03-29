@@ -42,3 +42,20 @@ The discovered credentials were used to spawn a new session with elevated privil
 runas /user:<admin_user> cmd
 ```
 - Using this command we gained access to a command prompt with administrative privileges.
+
+---
+## Key Learnings
+- Network shares are a common source of credential leaks.
+- Improper credential storage can lead to full system compromise.
+- Enumeration plays a critical role in identifying such weaknesses.
+
+---
+## Defensive Recommendations
+- Avoid storing credentials in shared folders
+- Implement strict access control policies (ACLs)
+- Use secure credential management solutions (vaults)
+- Monitor access to sensitive shares
+
+---
+## Summary
+- By enumerating network shares and identifying exposed credentials, administrative access was obtained on the initial machine, setting the stage for further post-exploitation and lateral movement within the domain.
