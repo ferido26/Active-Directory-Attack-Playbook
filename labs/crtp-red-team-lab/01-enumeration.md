@@ -46,6 +46,12 @@ Using PowerView, key domain information was extracted.
   
 ---
 
-## Summary
+## Defensive Recommendations
+- Restrict execution of reconnaissance tools using AppLocker or WDAC.
+- Monitor unusual enumeration activity.
+- Limit visibility of sensitive domain objects to low-privileged users.
 
+---
+
+## Summary
 - The enumeration phase provided a clear understanding of the domain structure and revealed multiple potential attack paths, which were leveraged in later stages of the attack.
