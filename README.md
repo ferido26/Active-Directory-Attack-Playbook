@@ -1,132 +1,67 @@
-# Active Directory Red Team Lab (CRTP Style)
+# 🛡️ Active Directory Attack Playbook
 
-## 👨‍💻 Author
-Ferido Fernando  
-📧 feridofdo26@gmail.com  
+## 📌 Overview
+This repository documents my hands-on journey in Active Directory security through practical red team simulations.
+
+The focus is on understanding how real-world attackers enumerate, exploit, and move laterally within an enterprise Windows domain.
 
 ---
 
 ## 🎯 Objective
-This project simulates a real-world **Active Directory attack** starting from a low-privileged user and achieving **Domain Dominance**.
-
-The goal was to:
-- Perform domain enumeration
-- Escalate privileges
-- Move laterally across systems
-- Exploit misconfigurations
-- Compromise Domain Controller
+Simulate a full attack chain in an Active Directory environment starting from a low-privileged user to Domain Admin level access.
 
 ---
 
-## 🏢 Environment
-- Windows Active Directory Lab
-- Multiple domain-joined machines
-- Tools used in real-world red teaming
+## ⚔️ Attack Flow
+
+1. Enumeration of domain users, groups, and systems
+2. Discovery of sensitive credentials
+3. Local privilege escalation
+4. Credential dumping
+5. Kerberos abuse (RBCD, ticket attacks)
+6. Lateral movement across machines
+7. ADCS misconfiguration exploitation
+8. Domain dominance using DCSync
 
 ---
 
-## ⚙️ Tools Used
+## 🧠 Skills Demonstrated
+
+- Active Directory Enumeration
+- Privilege Escalation
+- Credential Access
+- Kerberos Attacks
+- Lateral Movement
+- ADCS Exploitation
+- Post Exploitation Techniques
+
+---
+
+## 🛠️ Tools & Technologies
+
 - PowerView
-- BloodHound / SharpHound
-- Mimikatz / SafetyKatz
+- BloodHound
 - Rubeus
+- Mimikatz
 - Certify
-- WinRS / PowerShell Remoting
-
----
-
-## 🔍 Attack Chain Overview
-
-### 1. Initial Access (STDVM)
-- Enumerated domain using PowerView
-- Identified users, computers, and groups
-
----
-
-### 2. Local Privilege Escalation
-- Discovered credentials in shared folder
-- Used `runas` to gain admin access
-- Added user to Administrators group
-
----
-
-### 3. Credential Dumping
-- Disabled Defender protections
-- Extracted credentials using Mimikatz
-- Retrieved AES keys for machine accounts
-
----
-
-### 4. Lateral Movement (MGMTSRV)
-- Used Rubeus to request TGT
-- Verified with `klist`
-- Gained access using WinRS
-
----
-
-### 5. RBCD Abuse
-- Exploited GenericWrite permissions
-- Configured Resource-Based Constrained Delegation
-- Impersonated privileged user (techadmin)
-
----
-
-### 6. Privilege Escalation via Groups
-- Abused AddSelf permissions
-- Added user to Management group
-- Reset password of privileged account
-
----
-
-### 7. Remote Execution (TECHSRV30 & ADMINSRV86)
-- Established PowerShell remoting
-- Dumped credentials again
-- Identified active user sessions
-
----
-
-### 8. ADCS Misconfiguration (ESC3)
-- Found vulnerable certificate templates
-- Used Certify to request certificates
-- Impersonated techadmin using certificates
-
----
-
-### 9. Domain Controller Compromise
-- Accessed Domain Controller via WinRS
-- Performed DCSync attack
-- Extracted krbtgt hash
-
----
-
-### 10. Cross-Domain Attack
-- Forged Silver Ticket using trust key
-- Attempted access to finance domain
-
----
-
-## ⚠️ What Went Wrong
-- Incorrect service selection during Silver Ticket attack
-- Could not access SMB share due to wrong service (HTTP instead of CIFS)
-
----
-
-## 🛡️ Key Learnings
-- Misconfigurations in AD can lead to full domain compromise
-- Credential exposure is a major risk
-- Delegation and ADCS are powerful attack vectors
-- Proper enumeration is critical
-
----
-
-## 🔐 Security Recommendations
-- Restrict access to shared folders
-- Use secure credential storage
-- Implement AppLocker / WDAC
-- Monitor PowerShell activity
-- Fix ADCS misconfigurations
-- Apply least privilege principle
+- Windows PowerShell
 
 ---
 
 ## 📂 Project Structure
+
+- `labs/crtp-red-team-lab/` --> Full attack walkthrough
+- `notes/`--> Concept explanations
+- `assets/` --> Screenshots and diagrams
+
+---
+
+## ⚠️ Disclaimer
+This repository is created for educational purposes only.  
+All activities were performed in a controlled lab environment.
+
+---
+
+## 🚀 Author
+Ferido Fernando  
+Aspiring VAPT / Red Team Security Consultant
