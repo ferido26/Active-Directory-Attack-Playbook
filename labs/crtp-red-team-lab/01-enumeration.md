@@ -1,4 +1,4 @@
-# 🔍 Enumeration Phase
+# 1.Enumeration Phase
 
 ## Objective
 The goal of this phase was to gather as much information as possible about the Active Directory environment using a low-privileged domain user account from the STDVM machine, which consisted of multiple domain-joined systems.
