@@ -1,6 +1,6 @@
 # 🔍 Enumeration Phase
 
-## 📌 Objective
+## Objective
 The goal of this phase was to gather as much information as possible about the Active Directory environment using a low-privileged domain user account from the STDVM machine, which consisted of multiple domain-joined systems.
 
 
@@ -12,14 +12,14 @@ This includes identifying:
 
 ---
 
-## 🧠 Approach
+## Approach
 
 Enumeration is the most critical phase in any Active Directory attack.  
 Instead of exploiting immediately, the focus was on understanding the environment and identifying misconfigurations.
 
 ---
 
-## 🛠️ Tools Used
+## Tools Used
 
 - PowerView
 - BloodHound 
@@ -27,7 +27,7 @@ Instead of exploiting immediately, the focus was on understanding the environmen
 
 ---
 
-## 🔎 Domain Enumeration
+## Domain Enumeration
 
 Using PowerView, key domain information was extracted.
 
